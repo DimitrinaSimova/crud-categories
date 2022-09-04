@@ -1,0 +1,22 @@
+/*
+ *  Centering of element mixin
+ *  Used to center vertically/horizontally or both
+ *  Usage: center($axis);
+ *  Example: center; center(x);
+ *  Params: $axis - axis of centering, x for x-axis, y for y-axis, null for x-axis and y-axis
+ *  Requires: nothing
+ */
+@mixin center($axis: null) {
+    position: absolute;
+    @if $axis == null {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    } @else if $axis == x {
+        left: 50%;
+        transform: translateX(-50%);
+    } @else if $axis == y {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

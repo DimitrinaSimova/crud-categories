@@ -1,0 +1,67 @@
+.btn-primary {
+    padding: 10px;
+    color: $white;
+    background-color: $yellow;
+    border: $border1 transparent;
+    border-radius: $br-small;
+    @include transition(all, $transition-medium);
+
+    &:hover,
+    &:focus  {
+        color: $yellow;
+        border-color: $yellow;
+        background-color: $white;
+    }
+}
+
+.btn-secondary {
+    @extend .btn-primary;
+    background-color: $gray-light;
+
+    &:hover,
+    &:focus  {
+        color: $gray-light;
+        border-color: $gray-light;
+        background-color: $white;
+    }
+}
+
+.btn-warning {
+    background-color: $red;
+
+    &:hover,
+    &:focus {
+        color: $red;
+        border-color: $red;
+        background-color: $white;
+    }
+}
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+
+    &:before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+
+        @extend .icon;
+        @include transition(all, $transition-regular);
+
+        background-color: $white;
+    }
+
+    &:hover:before,
+    &:focus:before {
+        background-color: $yellow;
+    }
+}
+
+.btn-icon--add {
+    &:before {
+        content: "";
+        @extend .icon--circle-plus;
+    }
+}

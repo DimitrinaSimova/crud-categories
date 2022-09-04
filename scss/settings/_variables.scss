@@ -1,0 +1,50 @@
+// Paths
+$path-asset-root: "../";
+$path-asset-images: "../images/";
+
+//Colors
+$white: #ffffff;
+$white-shade06: rgba(255, 255, 255, 0.6);
+$black: #000000;
+$black-shade05: rgba(0, 0, 0, 0.5);
+$gray-shade01: #eef0f4;
+$gray-light: #a195a3;
+$gray-dark: #303539;
+$yellow: #ffc61d;
+$red: #f6504d;
+$pink: #ff3366;
+$purple: #9b59b6;
+$blue: #67a8e4;
+$green: #01b6ad;
+$blue-green: #00afd1;
+
+// Breakpoints
+$breakpoints: (
+    xs: (dir: min, size: 320px),
+    s: (dir: min, size: 480px),
+    sm: (dir: min, size: 576px),
+    md: (dir: min, size: 768px),
+    lg: (dir: min, size: 992px),
+    xl: (dir: min, size: 1200px),
+);
+
+// Borders
+$border1: 1px solid;
+$border2: 2px solid;
+
+// Border-radius
+$br-small: 2px;
+$br-medium: 4px;
+
+// Font families
+// $font-family-regular: Montserrat-Regular, sans-serif;
+
+// Transition timings
+$transition-regular: 0.2s;
+$transition-medium: 0.4s;
+$transition-long: 0.8s;
+
+//Shadows
+$box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+$box-shadow1: 3px 0px 12px 3px rgba(0, 0, 0, 0.25);
+$box-shadow2: 0 2px 6px rgba(0, 0, 0, 0.25);

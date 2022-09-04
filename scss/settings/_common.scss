@@ -1,0 +1,45 @@
+////////////////////////
+// COMMON STYLES
+a {
+    color: $gray-dark;
+}
+
+.relative {
+    position: relative;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.single-line-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.page-container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/////////////////////////////
+/// Categories colors
+.bg--cat-stream {
+    background-color: $pink;
+}
+
+.bg--cat-movie {
+    background-color: $purple;
+}
+
+.bg--cat-radio {
+    background-color: $blue;
+}
+
+.bg--cat-series {
+    background-color: $green;
+}

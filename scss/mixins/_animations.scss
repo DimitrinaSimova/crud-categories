@@ -1,0 +1,108 @@
+/// Add Transition
+@mixin transition($transition, $delay) {
+    -webkit-transition: $transition $delay;
+    -moz-transition: $transition $delay;
+    -o-transition: $transition $delay;
+    transition: $transition $delay;
+}
+
+// Add generic transform
+@mixin transform($transformProps) {
+    -webkit-transform: $transformProps;
+    /*Ch <36, Saf 5.1+, iOS, An =<4.4.4*/
+    -ms-transform: $transformProps;
+    /* IE 9 */
+    transform: $transformProps;
+    /* IE 10, Fx 16+, Op 12.1+ */
+}
+
+/// Add Transition
+/// @param {CSS Propery} $prop
+/// @param {Number} $speed (example: 0.5s where 's' is seconds or 'ms' for miliseconds)
+/// @param {Number} $delay (same as $speed property)
+@mixin addTransition($prop, $speed, $delay) {
+    -webkit-transition: $prop $speed ease-out $delay;
+    -moz-transition: $prop $speed ease-out $delay;
+    -o-transition: $prop $speed ease-out $delay;
+    transition: $prop $speed ease-out $delay;
+}
+
+/// Add Translate3d
+/// @param {Percentage} $posYValue (example: 10%)
+/// @param {Percentage} $posXValue (example: 50%)
+/// @param {Percentage} $posZValue (example: 50%)
+@mixin addTranslate3d($posYValue, $posXValue, $posZValue: false) {
+    @if ($posZValue) {
+        -webkit-transform: translate3d($posYValue, $posXValue, $posZValue);
+        /*Ch <36, Saf 5.1+, iOS, An =<4.4.4*/
+        -ms-transform: translate3d($posYValue, $posXValue, $posZValue);
+        /* IE 9 */
+        transform: translate3d($posYValue, $posXValue, $posZValue);
+        /* IE 10, Fx 16+, Op 12.1+ */
+    }
+    @else {
+        -webkit-transform: translate($posYValue, $posXValue);
+        /*Ch <36, Saf 5.1+, iOS, An =<4.4.4*/
+        -ms-transform: translate($posYValue, $posXValue);
+        /* IE 9 */
+        transform: translate($posYValue, $posXValue);
+        /* IE 10, Fx 16+, Op 12.1+ */
+    }
+}
+
+@mixin addTransform($posYValue, $posXValue) {
+    -webkit-transform: translate($posYValue, $posXValue);
+    /*Ch <36, Saf 5.1+, iOS, An =<4.4.4*/
+    -ms-transform: translate($posYValue, $posXValue);
+    /* IE 9 */
+    transform: translate($posYValue, $posXValue);
+    /* IE 10, Fx 16+, Op 12.1+ */
+}
+
+@mixin addTransformX($posXValue) {
+    -webkit-transform: translateX($posXValue);
+    /*Ch <36, Saf 5.1+, iOS, An =<4.4.4*/
+    -ms-transform: translateX($posXValue);
+    /* IE 9 */
+    transform: translateX($posXValue);
+    /* IE 10, Fx 16+, Op 12.1+ */
+}
+
+@mixin addTransformY($posYValue) {
+    -webkit-transform: translateY($posYValue);
+    /*Ch <36, Saf 5.1+, iOS, An =<4.4.4*/
+    -ms-transform: translateY($posYValue);
+    /* IE 9 */
+    transform: translateY($posYValue);
+    /* IE 10, Fx 16+, Op 12.1+ */
+}
+
+@mixin removeTransform() {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+}
+
+/// Add Rotation
+/// @param {CSS Propery} $deg (example: 45deg)
+@mixin addRotation($deg) {
+    -webkit-transform: rotate($deg);
+    /* Chrome, Safari, Opera */
+    -ms-transform: rotate($deg);
+    /* IE 9 */
+    transform: rotate($deg);
+}
+
+/// Set Dimension
+/// If you want to set only height, you must setup
+/// the first paramater to falsy value like 0 or false and etc...
+/// @param {Percentage} $width (opt) (example: 50%)
+/// @param {Percentage} $height (opt)
+@mixin setDimension($width: false, $height: false) {
+    @if ($width) {
+        width: $width;
+    }
+    @if ($height) {
+        height: $height;
+    }
+}

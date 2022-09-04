@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+    <div class="page-container">
+        <header>
+            <h1 class="bold">Categories</h1>
+            <div>
+                <a href="javascript:;" id="add-category" class="btn-primary btn-icon btn-icon--add"
+                    title="Добави категория">Добави
+                    категория</a>
+            </div>
+        </header>
+
+        <div class="categories-list__container">
+            <div class="categories-list__row">
+                <div class="category__icon ">
+                </div>
+                <div class="category__name align-self-center">Name</div>
+                <div class="category__type align-self-center">Type</div>
+                <div class="category__type align-self-center text-center">Order</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal__overlay modal__add-category">
+        <div class="modal__body">
+            <div class="d-flex justify-content-between">
+                <div class="modal__title m-b20">Add category</div>
+                <button class="btn-close icon icon--close"></button>
+            </div>
+
+            <div>
+                <form id="frmAddCategory" class="form" action="/action_page.php" method="POST">
+                    <div class="form__item">
+                        <label class="form__label required">Name</label>
+                        <input type="text" id="catName" name="cat-name" class="form__text error" required>
+                    </div>
+
+                    <div class="form__item">
+                        <label class="form__label required">Type</label>
+                        <input type="text" id="catType" name="cat-type" class="form__text error" required>
+                    </div>
+
+                    <div class="form__item">
+                        <label class="form__label required">Order</label>
+                        <input type="text" id="catOrder" name="cat-order" class="form__text error" required>
+                    </div>
+
+                    <div class="form__item text-right">
+                        <input type="reset" value="Cancel" class="btn-secondary">
+                        <input type="submit" id="btnSubmit" value="Add Category"
+                            class="btn-primary bg--red text--white">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal__overlay modal__delete-category">
+        <div class="modal__body">
+            <div class="d-flex justify-content-between">
+                <div class="modal__title">Delete category</div>
+                <button class="btn-close icon icon--close"></button>
+            </div>
+
+            <div>
+                <form if="frmDeleteCategory" class="form" method="POST">
+                    <p class="form__item">
+                        You are about to delete this category?
+                    </p>
+
+                    <div class="form__item text-right">
+                        <input type="reset" value="No, keep it" class="btn-secondary">
+                        <input type="submit" value="Yes, delete" class="btn-primary btn-warning text--white">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

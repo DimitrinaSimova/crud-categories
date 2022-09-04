@@ -1,0 +1,43 @@
+.modal__overlay {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    inset: 0 0 0 0;
+    z-index: 700;
+    background-color: $black-shade05;
+}
+
+.modal__body {
+    width: 90%;
+    max-width: 600px;
+    max-height: 80%;
+    padding: 20px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 600;
+    overflow-y: auto;
+
+    background-color: $white;
+    border: $border1 $gray-light;
+    border-radius: $br-small;
+
+    .btn-close {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        background-color: $black;
+    }
+
+    @include bp(md) {
+        width: 70%;
+        padding: 40px;
+    }
+}
+
+.modal__title {
+    font-size: 1.5rem;
+}

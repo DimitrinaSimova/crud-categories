@@ -1,0 +1,21 @@
+// @use "../settings/variables" as *;
+
+/*
+ *  Breakpoints generator mixin
+ *  Usage: bp($width) {@content;};
+ *  Example: bp(xs) {...};
+ *  Params: $width - corresponds to label of desired breakpoint from breakpoints var list
+ *          @content - block with code to be included in the breakpoint
+ *  Requires: $breakpoints variables
+ */
+@mixin bp($width) {
+	@if map_has_key($breakpoints, $width) {
+		$size: map_get(map_get($breakpoints, $width), size);
+		$type: map_get(map_get($breakpoints, $width), dir);
+		@media only screen and (#{$type}-width: $size) {
+			@content;
+		}
+	} @else {
+		@debug 'Mixin bp() failed'
+	}
+}

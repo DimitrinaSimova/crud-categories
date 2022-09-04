@@ -1,0 +1,87 @@
+input[type=button], 
+input[type=submit], 
+input[type=reset] {
+    // border: none;
+    cursor: pointer;
+}
+
+.form {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.form__item {
+    margin-top: 20px;
+}
+
+.form__label {
+    display: block;
+    color: $gray-light;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.required {
+    &::after {
+        content: "*";
+        padding-left: 5px;
+    }
+}
+
+.form__text {
+    width: 100%;
+    display: block;
+    margin-top: 5px;
+    padding: 10px;
+    border: $border1 $gray-dark;
+    border-radius: $br-small;
+
+    &::-webkit-input-placeholder {
+        color: $gray-dark;
+        font-size: 0.875rem;
+    }
+
+    &::-moz-placeholder {
+        color: $gray-dark;
+        font-size: 0.875rem;
+    }
+
+    &:-moz-placeholder {
+        color: $gray-dark;
+        font-size: 0.875rem;
+    }
+}
+
+.form__button {
+    padding: 15px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    border: none;
+    color: $black;
+    background-color: var(--yellow);
+
+    &.active {
+        color: $gray-dark;
+    }
+}
+
+.fieldset-wrapper {
+    // max-width: 100%;
+    margin-top: 20px;
+    padding: 0 10px 20px;
+    border: $border1 $gray-dark;
+    border-radius: $br-small;
+    background-color: $white;
+    
+    @include bp(lg) {
+        max-width: 70%;
+    }
+}
+
+/////////////////////////////
+// Errors
+
+.error {
+    border-color: var(--red);
+}

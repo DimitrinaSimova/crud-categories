@@ -1,0 +1,68 @@
+.icon--close {
+    -webkit-mask: url(#{$path-asset-images}icons/close.svg);
+    mask: url(#{$path-asset-images}icons/close.svg);
+}
+
+.icon--plus {
+    -webkit-mask: url(#{$path-asset-images}icons/plus-solid.svg);
+    mask: url(#{$path-asset-images}icons/plus-solid.svg);
+}
+
+.icon--circle-plus {
+    -webkit-mask: url(#{$path-asset-images}icons/circle-plus-solid.svg);
+    mask: url(#{$path-asset-images}icons/circle-plus-solid.svg);
+}
+
+.icon--list {
+    -webkit-mask: url(#{$path-asset-images}icons/list-solid.svg);
+    mask: url(#{$path-asset-images}icons/list-solid.svg);
+}
+
+.icon--pen {
+    -webkit-mask: url(#{$path-asset-images}icons/pen-solid.svg);
+    mask: url(#{$path-asset-images}icons/pen-solid.svg);
+}
+
+.icon--trash {
+    -webkit-mask: url(#{$path-asset-images}icons/trash-can-solid.svg);
+    mask: url(#{$path-asset-images}icons/trash-can-solid.svg);
+}
+
+.icon--film {
+    -webkit-mask: url(#{$path-asset-images}icons/film-solid.svg);
+    mask: url(#{$path-asset-images}icons/film-solid.svg);
+}
+
+.icon--radio {
+    -webkit-mask: url(#{$path-asset-images}icons/radio-solid.svg);
+    mask: url(#{$path-asset-images}icons/radio-solid.svg);
+}
+
+
+.icon--tower-cell {
+    -webkit-mask: url(#{$path-asset-images}icons/tower-cell-solid.svg);
+    mask: url(#{$path-asset-images}icons/tower-cell-solid.svg);
+}
+
+.icon--tv {
+    -webkit-mask: url(#{$path-asset-images}icons/tv-solid.svg);
+    mask: url(#{$path-asset-images}icons/tv-solid.svg);
+}
+
+
+.icon {
+    display: inline-block;
+    
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    -webkit-mask-position-x: center;
+    mask-position: center;
+
+    &.active {
+        background-color: $gray-dark;
+    }
+}
