@@ -39,20 +39,25 @@
             </div>
 
             <div>
-                <form id="frmAddCategory" class="form" action="/action_page.php" method="POST">
+                <form id="frmAddCategory" class="form">
                     <div class="form__item">
                         <label class="form__label required">Name</label>
-                        <input type="text" id="catName" name="cat-name" class="form__text error" required>
+                        <input type="text" id="catName" name="name" class="form__text error" required>
                     </div>
 
                     <div class="form__item">
                         <label class="form__label required">Type</label>
-                        <input type="text" id="catType" name="cat-type" class="form__text error" required>
+                        <select class="form__text" id="catType" name="type">
+                            <option value="Stream">Stream</option>
+                            <option value="Movie">Movie</option>
+                            <option value="Radio">Radio</option>
+                            <option value="Series">Series</option>
+                        </select>
                     </div>
 
                     <div class="form__item">
                         <label class="form__label required">Order</label>
-                        <input type="text" id="catOrder" name="cat-order" class="form__text error" required>
+                        <input type="number" id="catOrder" name="order" class="form__text error" required>
                     </div>
 
                     <div class="form__item text-right">

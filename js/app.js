@@ -14,13 +14,13 @@ $(function () {
 
     let bindEvents = function () {
 
-        $(document).on('click', '.modal__overlay', function (e) {
-            e.preventDefault();
+        // $(document).on('click', '.modal__overlay', function (e) {
+        //     e.preventDefault();
 
-            if ($(e.target).parent('.modal__overlay').length == 0) {
-                closeModal();
-            }
-        });
+        //     if ($(e.target).parent('.modal__overlay').length == 0) {
+        //         closeModal();
+        //     }
+        // });
 
         $(document).on('click', '.btn-close', function () {
             closeModal();
@@ -51,9 +51,9 @@ $(function () {
             $('#frmAddCategory').submit();
         });
 
-        $('#frmAddCategory').on('submit', function (e) {
+        $('#frmAddCategory').submit(function (e) {
             e.preventDefault();
-            addCategory();
+            addCategory(this);
         });
 
     }
@@ -101,32 +101,20 @@ function getCategories(categories) {
             </div>`
         )
     });
-
-    // $('#add-category').on('click', function () {
-    //     if ($('.modal__overlay').hasClass('d-block')) {
-    //         $('.modal__overlay').removeClass('d-block');
-    //     } else {
-    //         $('.modal__overlay').addClass('d-block');
-    //     }
-    // });
-
-    // function closeModal(e) {
-    //     $('.modal__overlay').removeClass('d-block')
-    // }
 }
 
-function addCategory(e) {
-    e.preventDefault();
+function addCategory(form) {
+    const formData = $('#frmAddCategory').serializeArray();
+    const formJson = {};
 
-    $.ajax({
-        type: "POST",
-        url: "http://127.0.0.1:57675/api/categories/data.json",
-        dataType: 'json',
-        success: function (data) {
-            // getCategories(data)
-            data.items.push(
-                { id: '7', name: 'Movies', type: 'movie', order: '567' }
-            );
-        }
+    formData.forEach((input) => {
+        formJson[input.name] = input.value;
+    });
+
+    const request = $.post("http://localhost/api/categories", formJson);
+    getCategories([formJson]);
+    form.reset()
+    request.done = (function (data) {
+        closeModal()
     });
 }
